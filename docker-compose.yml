@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
+    image: elasticsearch/elasticsearch:7.4.2
     container_name: elasticsearch1
     environment:
       - node.name=elasticsearch1
@@ -51,7 +51,7 @@ services:
       - 9200:9200
       - 9300:9300
   elasticsearch2:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
+    image: elasticsearch/elasticsearch:7.4.2
     container_name: elasticsearch2
     environment:
       - node.name=elasticsearch2
@@ -101,7 +101,7 @@ services:
     ports:
       - 9201:9200
   elasticsearch3:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
+    image: elasticsearch/elasticsearch:7.4.2
     container_name: elasticsearch3
     environment:
       - node.name=elasticsearch3
@@ -247,7 +247,7 @@ services:
       - elastic
 
   filebeat:
-    image: docker.elastic.co/beats/filebeat:7.4.2
+    image: beats/filebeat:7.4.2
     command: --strict.perms=false
     environment:
       - setup.kibana.host=kibana:5601
@@ -275,7 +275,7 @@ services:
     networks:
         - elastic
   app-search:
-    image: docker.elastic.co/app-search/app-search:7.4.2
+    image: app-search/app-search:7.4.2
     ports:
       - 3002:3002
     environment:
